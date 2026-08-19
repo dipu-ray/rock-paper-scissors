@@ -1,1 +1,45 @@
 @import "tailwindcss";
+
+/* Custom Neo-Brutalist Shadow Helper */
+.neo-shadow {
+    box-shadow: 5px 5px 0px 0px #000000;
+}
+
+.neo-shadow-lg {
+    box-shadow: 8px 8px 0px 0px #000000;
+}
+
+/* CSS Animations */
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.animate-pop {
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-shake {
+    animation: shake 0.4s ease-in-out;
+}

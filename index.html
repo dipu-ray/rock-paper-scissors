@@ -2,17 +2,98 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
-    <link href="./src/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon" />
+    <link href="./src/style.css" rel="stylesheet" />
 </head>
 
-<body>
-    <h1 class="text-9xl font-bold underline">
-        Hello world!
-    </h1>
+<body class="bg-[#FFE500] font-mono min-h-screen flex flex-col justify-between p-4 text-black">
+    <!-- Header -->
+    <header class="max-w-md mx-auto w-full text-center mt-2 sm:mt-6">
+        <h1
+            class="text-3xl sm:text-5xl font-black uppercase bg-[#FF6B6B] border-4 border-black p-3 neo-shadow-lg tracking-wider">
+            Rock Paper Scissors
+        </h1>
+    </header>
+
+    <!-- Main Game Container -->
+    <main class="max-w-md mx-auto w-full my-auto py-6">
+        <!-- Score Board -->
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="bg-[#4D96FF] border-4 border-black p-4 text-center neo-shadow">
+                <p class="text-xs sm:text-sm font-bold uppercase tracking-wider">
+                    YOU
+                </p>
+                <p id="player-score" class="text-4xl sm:text-5xl font-black">0</p>
+            </div>
+            <div class="bg-[#FFD93D] border-4 border-black p-4 text-center neo-shadow">
+                <p class="text-xs sm:text-sm font-bold uppercase tracking-wider">
+                    COMPUTER
+                </p>
+                <p id="computer-score" class="text-4xl sm:text-5xl font-black">0</p>
+            </div>
+        </div>
+
+        <!-- Battle Arena Display -->
+        <div class="bg-white border-4 border-black p-6 neo-shadow-lg text-center mb-6">
+            <div id="result-message"
+                class="text-lg sm:text-xl font-black uppercase bg-[#6BCB77] border-2 border-black py-2 px-3 mb-6 inline-block neo-shadow">
+                Choose Your Weapon!
+            </div>
+            <div class="flex justify-around items-center gap-2">
+                <div class="flex flex-col items-center">
+                    <span class="text-xs font-bold mb-2 uppercase">Your Move</span>
+                    <div id="player-display"
+                        class="w-20 h-20 sm:w-24 sm:h-24 bg-[#FFD93D] border-4 border-black flex items-center justify-center text-4xl sm:text-5xl neo-shadow">
+                        ❓
+                    </div>
+                </div>
+                <span class="text-2xl sm:text-3xl font-black">VS</span>
+                <div class="flex flex-col items-center">
+                    <span class="text-xs font-bold mb-2 uppercase">Comp Move</span>
+                    <div id="computer-display"
+                        class="w-20 h-20 sm:w-24 sm:h-24 bg-[#FF6B6B] border-4 border-black flex items-center justify-center text-4xl sm:text-5xl neo-shadow">
+                        ❓
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="grid grid-cols-3 gap-2 sm:gap-4 mb-6">
+            <button onclick="playGame('rock')"
+                class="bg-[#FF6B6B] hover:bg-[#ff5252] active:translate-x-1 active:translate-y-1 active:shadow-none border-4 border-black p-3 sm:p-4 neo-shadow font-black text-center transition-all">
+                <div class="text-3xl sm:text-4xl mb-1">✊</div>
+                <div class="text-xs sm:text-sm uppercase tracking-wider">Rock</div>
+            </button>
+            <button onclick="playGame('paper')"
+                class="bg-[#4D96FF] hover:bg-[#3385ff] active:translate-x-1 active:translate-y-1 active:shadow-none border-4 border-black p-3 sm:p-4 neo-shadow font-black text-center transition-all">
+                <div class="text-3xl sm:text-4xl mb-1">✋</div>
+                <div class="text-xs sm:text-sm uppercase tracking-wider">Paper</div>
+            </button>
+            <button onclick="playGame('scissors')"
+                class="bg-[#6BCB77] hover:bg-[#52c260] active:translate-x-1 active:translate-y-1 active:shadow-none border-4 border-black p-3 sm:p-4 neo-shadow font-black text-center transition-all">
+                <div class="text-3xl sm:text-4xl mb-1">✌️</div>
+                <div class="text-xs sm:text-sm uppercase tracking-wider">
+                    Scissors
+                </div>
+            </button>
+        </div>
+
+        <!-- Reset Button -->
+        <button onclick="resetGame()"
+            class="w-full bg-white hover:bg-gray-100 active:translate-x-1 active:translate-y-1 active:shadow-none border-4 border-black p-3 neo-shadow font-black uppercase tracking-wider text-sm">
+            🔄 Reset Score
+        </button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs font-bold uppercase tracking-widest pb-2">
+        Neo-Brutalism RPS Game
+    </footer>
+
 </body>
 
 </html>
