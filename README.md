@@ -1,7 +1,7 @@
 # 🪨✂️📄 Rock Paper Scissors
 
 **Created:** August 18, 2026  
-**Last Updated:** August 19, 2026
+**Last Updated:** August 21, 2026
 
 🔗 **Live Demo:** [Click Here 👆](https://rock-paper-scissors-gamma-blue-70.vercel.app/)
 
